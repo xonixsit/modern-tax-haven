@@ -5,131 +5,510 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VatLinks - VAT & Financial Services</title>
     <meta name="description" content="Professional VAT, Tax, and Financial Services" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/src/styles.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a href="/" class="logo">VatLinks</a>
-        <div class="nav-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Accounting Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Bookkeeping Services</a></li>
+                <li><a class="dropdown-item" href="#">Accounts Payable Outsourcing</a></li>
+                <li><a class="dropdown-item" href="#">Accounting and Financial Reporting</a></li>
+                <li><a class="dropdown-item" href="#">Accounting Supervision Services</a></li>
+                <li><a class="dropdown-item" href="#">Updating of Backlog Accounts</a></li>
+                <li><a class="dropdown-item" href="#">Account Reconciliation Services</a></li>
+                <li><a class="dropdown-item" href="#">Payroll Services</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                VAT Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">VAT and Tax Advisory</a></li>
+                <li><a class="dropdown-item" href="#">VAT Implementation</a></li>
+                <li><a class="dropdown-item" href="#">VAT Refund at Airport</a></li>
+                <li><a class="dropdown-item" href="#">VAT Consultants</a></li>
+                <li><a class="dropdown-item" href="#">VAT Assessment and Appeals</a></li>
+                <li><a class="dropdown-item" href="#">VAT Compliance Audit</a></li>
+                <li><a class="dropdown-item" href="#">VAT Returns Filing</a></li>
+                <li><a class="dropdown-item" href="#">VAT Training</a></li>
+                <li><a class="dropdown-item" href="#">VAT in UAE</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                Advisory Services
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Corporate Tax Services</a></li>
+                <li><a class="dropdown-item" href="#">Tax Advisory</a></li>
+                <li><a class="dropdown-item" href="#">Corporate Governance</a></li>
+                <li><a class="dropdown-item" href="#">Mergers and Acquisitions</a></li>
+                <li><a class="dropdown-item" href="#">Financial Reporting and Statement Analysis</a></li>
+                <li><a class="dropdown-item" href="#">Financial Feasibility</a></li>
+                <li><a class="dropdown-item" href="#">Business Strategy and Planning</a></li>
+                <li><a class="dropdown-item" href="#">Business Succession Planning</a></li>
+                <li><a class="dropdown-item" href="#">Business Restructuring</a></li>
+                <li><a class="dropdown-item" href="#">Budgeting and Finance Planning</a></li>
+                <li><a class="dropdown-item" href="#">Human Capital</a></li>
+                <li><a class="dropdown-item" href="#">Valuation and Financial Restructuring</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link btn-primary" id="navAppointmentBtn">Book Appointment</a>
+            </li>
+            <li class="nav-item">
+              <a href="#quote" class="nav-link btn-secondary">Get a Quote</a>
+            </li>
+          </ul>
         </div>
-        <ul class="nav-menu">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#appointment" class="btn-primary">Book Appointment</a></li>
-        </ul>
       </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
+      <div class="hero-particles"></div>
       <div class="container">
         <div class="hero-content">
-          <h1>Expert VAT & Tax Solutions for Your Business</h1>
-          <p>Professional financial services tailored to your needs. We handle VAT, accounting, and tax matters so you can focus on growing your business.</p>
-          <div class="hero-buttons">
-            <a href="#appointment" class="btn-primary">Book a Consultation</a>
-            <a href="#services" class="btn-secondary">Our Services</a>
+          <div class="hero-text" data-aos="fade-right">
+            <h1>
+              <span class="gradient-text">Expert Financial Solutions</span>
+            </h1>
+            <p>Your trusted partner for VAT, accounting, and financial advisory services in the UAE. We help businesses navigate complex financial landscapes with confidence.</p>
+            <div class="hero-cta">
+              <a href="#" class="btn btn-primary" id="appointmentBtn">Book Appointment</a>
+              <a href="#services" class="btn btn-outline">Our Services</a>
+            </div>
+            <div class="hero-stats">
+              <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-container">
+                  <div class="stat-circle outer"></div>
+                  <div class="stat-circle inner"></div>
+                  <div class="stat-content">
+                    <div class="stat-number"><span class="counter" data-target="500">0</span>+</div>
+                    <div class="stat-label">Happy Clients</div>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-container">
+                  <div class="stat-circle outer"></div>
+                  <div class="stat-circle inner"></div>
+                  <div class="stat-content">
+                    <div class="stat-number"><span class="counter" data-target="95">0</span>%</div>
+                    <div class="stat-label">Success Rate</div>
+                  </div>
+                </div>
+              </div>
+              <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-container">
+                  <div class="stat-circle outer"></div>
+                  <div class="stat-circle inner"></div>
+                  <div class="stat-content">
+                    <div class="stat-number"><span class="counter" data-target="10">0</span>+</div>
+                    <div class="stat-label">Years Experience</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-visual" data-aos="fade-left">
+            <div class="finance-elements">
+              <div class="element calculator">
+                <i class="fas fa-calculator"></i>
+              </div>
+              <div class="element chart">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="element document">
+                <i class="fas fa-file-invoice-dollar"></i>
+              </div>
+              <div class="element coins">
+                <i class="fas fa-coins"></i>
+              </div>
+              <div class="element shield">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+            </div>
+            <div class="gradient-blob"></div>
+            <div class="floating-numbers">
+              <div class="number">VAT</div>
+              <div class="number">TAX</div>
+              <div class="number">UAE</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
+<!-- Features Section -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-block" data-aos="fade-up">
+        <div class="feature-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="feature-content">
+          <h3>EFFICIENCY</h3>
+          <p>Vatlinks delivers unmatched efficiency and reliability, ensuring exceptional service experiences.</p>
+        </div>
+      </div>
 
+      <div class="feature-block" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="feature-content">
+          <h3>INTEGRITY</h3>
+          <p>We provide premium accounting services with integrity, ethics, and trustworthiness</p>
+        </div>
+      </div>
+
+      <div class="feature-block" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-icon">
+          <i class="fas fa-eye"></i>
+        </div>
+        <div class="feature-content">
+          <h3>TRANSPARENCY</h3>
+          <p>Vatlinks offers transparent, high-quality auditing services tailored to diverse needs</p>
+        </div>
+      </div>
+
+      <div class="feature-block" data-aos="fade-up" data-aos-delay="300">
+        <div class="feature-icon">
+          <i class="fas fa-headset"></i>
+        </div>
+        <div class="feature-content">
+          <h3>24/7 SUPPORT</h3>
+          <p>Round-the-clock assistance for seamless and uninterrupted client service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services" id="services">
       <div class="container">
-        <h2>Our Services</h2>
+        <div class="section-header">
+          <h2>Our Services</h2>
+          <p>Comprehensive financial solutions tailored to your needs</p>
+        </div>
         <div class="services-grid">
-          <div class="service-card">
-            <div class="service-icon">📊</div>
+          <div class="service-card" data-aos="fade-up">
+            <div class="service-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
             <h3>VAT Services</h3>
-            <p>Complete VAT management, returns, and compliance services</p>
+            <p>Expert VAT consultation and compliance services for businesses in the UAE</p>
+            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
           </div>
-          <div class="service-card">
-            <div class="service-icon">📈</div>
-            <h3>Tax Planning</h3>
-            <p>Strategic tax planning and optimization for businesses</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">📑</div>
-            <h3>Accounting</h3>
-            <p>Professional accounting and bookkeeping services</p>
-          </div>
-          <div class="service-card">
-            <div class="service-icon">💼</div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
             <h3>Financial Advisory</h3>
-            <p>Expert financial guidance and consulting</p>
+            <p>Strategic financial planning and advisory services for sustainable growth</p>
+            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-icon">
+              <i class="fas fa-book"></i>
+            </div>
+            <h3>Accounting Services</h3>
+            <p>Comprehensive accounting and bookkeeping solutions for your business</p>
+            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- What We Do Section -->
+    <section class="what-we-do" id="what-we-do">
+      <div class="container">
+        <div class="section-header">
+          <h2>What We Do</h2>
+          <p>Entrust your accounting, audit, and financial management needs to us with our all-inclusive VAT-compliant solutions!</p>
+        </div>
+        <div class="what-we-do-grid">
+          <div class="what-we-do-card" data-aos="fade-up">
+            <div class="what-we-do-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>Business Setup</h3>
+              <p>Our business setup services simplify the process for entrepreneurs, ensuring the right structure and strategic investments are in place for lasting success.</p>
+            </div>
+          </div>
+
+          <div class="what-we-do-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="what-we-do-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>Accounting</h3>
+              <p>At Vatlinks, we simplify accounting with transparent processes and expert advice, tailored to meet the unique needs of businesses in the UAE.</p>
+            </div>
+          </div>
+
+          <div class="what-we-do-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="what-we-do-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>Audit</h3>
+              <p>With our top-tier audit services, ensure your company complies with all relevant laws, regulations, and accounting standards in the UAE.</p>
+            </div>
+          </div>
+
+          <div class="what-we-do-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="what-we-do-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>Legal</h3>
+              <p>Choose Vatlinks for all your corporate, commercial, legal, and asset management requirements, delivered with professionalism and precision.</p>
+            </div>
+          </div>
+
+          <div class="what-we-do-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="what-we-do-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>ICV Certification</h3>
+              <p>We assist you in obtaining In-Country Value (ICV) certifications, enabling seamless business operations with UAE's oil and gas sector.</p>
+            </div>
+          </div>
+
+          <div class="what-we-do-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="what-we-do-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="what-we-do-content">
+              <h3>Liquidation</h3>
+              <p>Leverage our expertise to maximize your investment returns with precise financial valuation during the seamless liquidation process.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Appointment Form -->
-    <section id="appointment" class="appointment">
-      <div class="container">
-        <h2>Book an Appointment</h2>
-        <form id="appointmentForm" class="appointment-form">
-          <div class="form-group">
-            <input type="text" id="name" required placeholder="Your Name">
+        <!-- Financial Accuracy Section -->
+        <section class="financial-accuracy" id="financial-accuracy">
+          <div class="container">
+            <div class="financial-header">
+              <h2>Ensuring Financial Accuracy and Regulatory Adherence</h2>
+              <p>How Vatlinks Supports Accounting and Auditing in Dubai, UAE</p>
+            </div>
+            <div class="financial-intro">
+              <p>As a leading firm in Dubai, Vatlinks plays a vital role in maintaining financial transparency and ensuring compliance with local regulations. Here's how we contribute to the accounting and auditing landscape in the UAE:</p>
+            </div>
+            <div class="financial-grid">
+              <div class="financial-card" data-aos="fade-up">
+                <div class="card-number">01</div>
+                <div class="card-content">
+                  <h3>Accounting and Auditing Excellence</h3>
+                  <p>At Vatlinks, our team of experienced professionals brings a wealth of knowledge in accounting and auditing. We provide precise financial information and conduct thorough audits, ensuring accurate assessments of companies' financial statements.</p>
+                </div>
+              </div>
+    
+              <div class="financial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-number">02</div>
+                <div class="card-content">
+                  <h3>Financial Statement Preparation</h3>
+                  <p>As a leading firm in Dubai, we assist businesses in preparing financial reports that comply with international accounting standards. Our goal is to ensure that all financial statements are transparent, reliable, and aligned with relevant regulatory frameworks.</p>
+                </div>
+              </div>
+    
+              <div class="financial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-number">03</div>
+                <div class="card-content">
+                  <h3>Adhering to Local Standards</h3>
+                  <p>With the ever-changing regulations in Dubai, we guide businesses through the complexities of accounting and auditing laws, ensuring compliance and preventing potential penalties or legal challenges.</p>
+                </div>
+              </div>
+    
+              <div class="financial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="card-number">04</div>
+                <div class="card-content">
+                  <h3>Independent Audit Assurance</h3>
+                  <p>Our team provides an impartial assessment of financial statements, meticulously examining records, transactions, and internal controls. This guarantees accuracy in reporting, fostering trust among investors, creditors, and regulatory bodies.</p>
+                </div>
+              </div>
+    
+              <div class="financial-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-number">05</div>
+                <div class="card-content">
+                  <h3>Risk Management and Internal Control Strengthening</h3>
+                  <p>We help businesses identify and manage financial risks by analyzing internal controls for potential weaknesses or fraud. Our solutions improve control systems, reducing risks and enhancing overall financial security.</p>
+                </div>
+              </div>
+    
+              <div class="financial-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="card-number">06</div>
+                <div class="card-content">
+                  <h3>Thorough Due Diligence</h3>
+                  <p>For mergers, acquisitions, or partnerships, we conduct thorough due diligence to assess the financial health of potential targets. Our analysis empowers clients to make well-informed decisions based on credible financial data.</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="email" id="email" required placeholder="Your Email">
+      </section>
+  
+      <!-- Testimonials Section -->
+      <section class="testimonials" id="testimonials">
+        <div class="container">
+          <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p>Trusted by Businesses for Expert Solutions and Unmatched Service</p>
           </div>
-          <div class="form-group">
-            <input type="tel" id="phone" required placeholder="Phone Number">
+          <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up">
+              <div class="quote-icon">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">"Vatlinks has been instrumental in our company's growth in Dubai. Their expertise in tax planning and regulatory compliance has saved us both time and resources. Highly recommended!"</p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith">
+                </div>
+                <div class="author-info">
+                  <h4>John Smith</h4>
+                  <p>CEO, Tech Solutions LLC</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+              <div class="quote-icon">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">"The team at Vatlinks provided exceptional support during our business setup in UAE. Their attention to detail and professional guidance made the entire process seamless."</p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                </div>
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>Managing Director, Global Trade FZ-LLC</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+              <div class="quote-icon">
+                <i class="fas fa-quote-right"></i>
+              </div>
+              <p class="testimonial-text">"Their audit team's thoroughness and expertise gave us complete confidence in our financial reporting. They're more than service providers; they're trusted business partners."</p>
+              <div class="testimonial-author">
+                <div class="author-image">
+                  <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Chen">
+                </div>
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <p>CFO, Innovation Ventures</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-            <select id="service" required>
-              <option value="">Select Service</option>
-              <option value="vat">VAT Services</option>
-              <option value="tax">Tax Planning</option>
-              <option value="accounting">Accounting</option>
-              <option value="advisory">Financial Advisory</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <textarea id="message" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" class="btn-primary">Submit Request</button>
-        </form>
-      </div>
-    </section>
-
+        </div>
+      </section>
+  
+   
     <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>VatLinks</h3>
-            <p>Professional VAT, Tax, and Financial Services for your business success.</p>
+            <h3>Vatlinks</h3>
+            <p class="company-desc">Vatlinks is a UAE-based firm committed to delivering tailored, cost-effective solutions to meet all your business requirements under one roof.</p>
+            <div class="social-links">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
           </div>
           <div class="footer-section">
-            <h3>Quick Links</h3>
+            <h3>Accounting Services</h3>
             <ul>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
-              <li><a href="#appointment">Contact</a></li>
+              <li><a href="#">Bookkeeping Services</a></li>
+              <li><a href="#">Accounts Payable Outsourcing</a></li>
+              <li><a href="#">Accounting and Financial Reporting</a></li>
+              <li><a href="#">Accounting Supervision Services</a></li>
+              <li><a href="#">Updating of Backlog Accounts</a></li>
+              <li><a href="#">Account Reconciliation Services</a></li>
+              <li><a href="#">Payroll Services</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h3>Contact</h3>
-            <p>Email: info@vatlinks.com</p>
-            <p>Phone: +1 234 567 890</p>
-            <p>Address: 123 Business Street, City</p>
+            <h3>VAT Services</h3>
+            <ul>
+              <li><a href="#">VAT and Tax Advisory</a></li>
+              <li><a href="#">VAT Implementation</a></li>
+              <li><a href="#">VAT Refund at Airport</a></li>
+              <li><a href="#">VAT Consultants</a></li>
+              <li><a href="#">VAT Assessment and Appeals</a></li>
+              <li><a href="#">VAT Compliance Audit</a></li>
+              <li><a href="#">VAT Returns Filing</a></li>
+              <li><a href="#">VAT Training</a></li>
+              <li><a href="#">VAT in UAE</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Company Address</h3>
+            <p class="contact-intro">Connect with us for all your accounting, auditing, and VAT needs in Dubai.</p>
+            <div class="contact-info">
+              <p><strong>Address:</strong> Abu Hail Dubai UAE.</p>
+              <p><strong>Phone:</strong></p>
+              <ul class="phone-list">
+                <li>+971 56 404 2861</li>
+                <li>+971 52 410 9106</li>
+                <li>+971 50 977 2853</li>
+              </ul>
+              <p><strong>Email:</strong> <a href="mailto:support@vatlinks.com">support@vatlinks.com</a></p>
+            </div>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2024 VatLinks. All rights reserved.</p>
+          <p>&copy; 2024 Vatlinks. All rights reserved.</p>
         </div>
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 100
+      });
+    </script>
     <script src="/src/main.js"></script>
   </body>
 </html>

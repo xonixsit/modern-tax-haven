@@ -1,70 +1,72 @@
-// Navigation Toggle
+// Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.querySelector('.nav-toggle');
-  const navMenu = document.querySelector('.nav-menu');
+  // Navbar scroll effect
+  const navbar = document.querySelector('.navbar');
+  let lastScroll = 0;
 
-  navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.pageYOffset;
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-      navMenu.classList.remove('active');
-    }
-  });
-
-  // Smooth scroll for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth'
-        });
-        navMenu.classList.remove('active');
+      if (currentScroll <= 0) {
+        navbar.classList.remove('scroll-up');
+        return;
       }
-    });
-  });
 
-  // Form submission
-  const appointmentForm = document.getElementById('appointmentForm');
-  if (appointmentForm) {
-    appointmentForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      // Get form data
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value
-      };
+      if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+        navbar.classList.remove('scroll-up');
+        navbar.classList.add('scroll-down');
+      } else if (currentScroll < lastScroll && navbar.classList.contains('scroll-down')) {
+        navbar.classList.remove('scroll-down');
+        navbar.classList.add('scroll-up');
+      }
 
-      // Here you would typically send the data to your server
-      console.log('Form submitted:', formData);
-      
-      // Show success message
-      alert('Thank you! We will contact you soon.');
-      appointmentForm.reset();
+      lastScroll = currentScroll;
     });
   }
 
-  // Navbar scroll effect
-  let lastScroll = 0;
-  const navbar = document.querySelector('.navbar');
+  // Initialize AOS
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 50
+    });
+  }
 
-  window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+  // Counter animation
+  function animateCounter(element) {
+    const target = parseInt(element.dataset.target);
+    const duration = 2000;
+    const step = target / (duration / 16);
+    let current = 0;
 
-    if (currentScroll <= 0) {
-      navbar.style.boxShadow = 'none';
-    } else {
-      navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    }
+    const updateCounter = () => {
+      current += step;
+      if (current < target) {
+        element.textContent = Math.floor(current);
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target;
+      }
+    };
 
-    lastScroll = currentScroll;
-  });
+    updateCounter();
+  }
+
+  // Start counter animations when they come into view
+  const statsSection = document.querySelector('.hero-stats');
+  if (statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('.counter');
+          counters.forEach(counter => animateCounter(counter));
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(statsSection);
+  }
 });
