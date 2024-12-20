@@ -3,15 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>modern-tax-haven</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
-    <meta property="og:image" content="/og-image.png" />
+    <title>VatLinks - VAT & Financial Services</title>
+    <meta name="description" content="Professional VAT, Tax, and Financial Services" />
+    <link rel="stylesheet" href="/src/styles.css" />
   </head>
-
   <body>
-    <div id="root"></div>
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="/" class="logo">VatLinks</a>
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#appointment" class="btn-primary">Book Appointment</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1>Expert VAT & Tax Solutions for Your Business</h1>
+          <p>Professional financial services tailored to your needs. We handle VAT, accounting, and tax matters so you can focus on growing your business.</p>
+          <div class="hero-buttons">
+            <a href="#appointment" class="btn-primary">Book a Consultation</a>
+            <a href="#services" class="btn-secondary">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>VAT Services</h3>
+            <p>Complete VAT management, returns, and compliance services</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Tax Planning</h3>
+            <p>Strategic tax planning and optimization for businesses</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">📑</div>
+            <h3>Accounting</h3>
+            <p>Professional accounting and bookkeeping services</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Financial Advisory</h3>
+            <p>Expert financial guidance and consulting</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Appointment Form -->
+    <section id="appointment" class="appointment">
+      <div class="container">
+        <h2>Book an Appointment</h2>
+        <form id="appointmentForm" class="appointment-form">
+          <div class="form-group">
+            <input type="text" id="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" required placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <input type="tel" id="phone" required placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <select id="service" required>
+              <option value="">Select Service</option>
+              <option value="vat">VAT Services</option>
+              <option value="tax">Tax Planning</option>
+              <option value="accounting">Accounting</option>
+              <option value="advisory">Financial Advisory</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <textarea id="message" placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="btn-primary">Submit Request</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>VatLinks</h3>
+            <p>Professional VAT, Tax, and Financial Services for your business success.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#appointment">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: info@vatlinks.com</p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Business Street, City</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 VatLinks. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/src/main.js"></script>
   </body>
 </html>
